@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 5 Verified Profiles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      padding: 15px;
+      background-color: #fdfdfd;
+      position: relative;
+    }
+
+    .profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+      border: 2px solid #007BFF;
+    }
+
+    .profile-details {
+      flex: 1;
+    }
+
+    .profile-details h2 {
+      font-size: 18px;
+      color: #444;
+      margin: 0;
+    }
+
+    .profile-details p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .view-profile {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .view-profile:hover {
+      background-color: #0056b3;
+    }
+
+    /* Chat Icon */
+    .chat-icon {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 24px;
+      color: #007BFF;
+      cursor: pointer;
+    }
+
+    /* Favorite Icon */
+    .fav-icon {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #ff5733;
+    }
+
+    .fav-icon.favourited {
+      color: gold;
+    }
+
+    /* Load More Button */
+    .load-more {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .load-more button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #28a745;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .load-more button:hover {
+      background-color: #218838;
+    }
+
+    /* Membership Section */
+    .membership-section {
+      display: none; /* Hidden initially */
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .membership-section .message {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .membership-section .buy-membership {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #ff5733;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .membership-section .buy-membership:hover {
+      background-color: #c44127;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Top 5 Verified Profiles</h1>
+
+    <!-- Top 5 Profiles -->
+    <div id="profile-list">
+      <!-- Verified Profile 1 -->
+      <div class="profile">
+        <img src="https://imgur.com/BcGP1Kj.jpg" alt="Amit Tiwari">
+        <div class="profile-details">
+          <h2>Amit Tiwari (FRE-UP002)</h2>
+          <p><strong>Category:</strong> Freelancer</p>
+          <p><strong>City:</strong> Kanpur, Uttar Pradesh</p>
+          <p><strong>Profession:</strong> Graphic Designer</p>
+          <a href="#" class="view-profile">View Full Profile</a>
+        </div>
+        <span class="chat-icon" onclick="showChatModal('Amit Tiwari')">💌</span>
+        <span class="fav-icon" onclick="toggleFavourite(this)">❤️</span>
+      </div>
+
+      <!-- Verified Profile 2 -->
+      <div class="profile">
+        <img src="https://imgur.com/UMGVvOi.jpg" alt="Sonal Verma">
+        <div class="profile-details">
+          <h2>Sonal Verma (TEA-UP003)</h2>
+          <p><strong>Category:</strong> Teacher</p>
+          <p><strong>City:</strong> Agra, Uttar Pradesh</p>
+          <p><strong>Subject Expertise:</strong> Mathematics</p>
+          <a href="#" class="view-profile">View Full Profile</a>
+        </div>
+        <span class="chat-icon" onclick="showChatModal('Sonal Verma')">💌</span>
+        <span class="fav-icon" onclick="toggleFavourite(this)">❤️</span>
+      </div>
+
+      <!-- Verified Profile 3 -->
+      <div class="profile">
+        <img src="https://imgur.com/LGi3Who.jpg" alt="Sushma Patel">
+        <div class="profile-details">
+          <h2>Sushma Patel (STU-UP004)</h2>
+          <p><strong>Category:</strong> Student</p>
+          <p><strong>City:</strong> Lucknow, Uttar Pradesh</p>
+          <p><strong>Course:</strong> M.Sc. in Physics</p>
+          <a href="#" class="view-profile">View Full Profile</a>
+        </div>
+        <span class="chat-icon" onclick="showChatModal('Sushma Patel')">💌</span>
+        <span class="fav-icon" onclick="toggleFavourite(this)">❤️</span>
+      </div>
+
+      <!-- Verified Profile 4 -->
+      <div class="profile">
+        <img src="https://imgur.com/WfK2sH0.jpg" alt="Rajesh Kumar">
+        <div class="profile-details">
+          <h2>Rajesh Kumar (ENG-UP005)</h2>
+          <p><strong>Category:</strong> Engineer</p>
+          <p><strong>City:</strong> Varanasi, Uttar Pradesh</p>
+          <p><strong>Profession:</strong> Mechanical Engineer</p>
+          <a href="#" class="view-profile">View Full Profile</a>
+        </div>
+        <span class="chat-icon" onclick="showChatModal('Rajesh Kumar')">💌</span>
+        <span class="fav-icon" onclick="toggleFavourite(this)">❤️</span>
+      </div>
+
+      <!-- Verified Profile 5 -->
+      <div class="profile">
+        <img src="https://imgur.com/WwFsdGH.jpg" alt="Anita Sharma">
+        <div class="profile-details">
+          <h2>Anita Sharma (MED-UP006)</h2>
+          <p><strong>Category:</strong> Doctor</p>
+          <p><strong>City:</strong> Allahabad, Uttar Pradesh</p>
+          <p><strong>Specialization:</strong> Pediatrician</p>
+          <a href="#" class="view-profile">View Full Profile</a>
+        </div>
+        <span class="chat-icon" onclick="showChatModal('Anita Sharma')">💌</span>
+        <span class="fav-icon" onclick="toggleFavourite(this)">❤️</span>
+      </div>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="load-more">
+      <button onclick="showMembership()">More Profiles</button>
+    </div>
+
+    <!-- Membership Section -->
+    <div class="membership-section" id="membership-section">
+      <p class="message">Upgrade your membership to view more profiles.</p>
+      <a href="#" class="buy-membership">Buy Membership</a>
+    </div>
+  </div>
+
+  <script>
+    // Favorite icon toggle functionality
+    function toggleFavourite(icon) {
+      icon.classList.toggle('favourited');
+      icon.textContent = icon.classList.contains('favourited') ? '💓' : '❤️';
+    }
+
+    // Show Chat Modal functionality
+    function showChatModal(profileName) {
+      alert('Chat with ' + profileName + ' - Please buy the membership to get full access.');
+    }
+
+    // Show Membership Section
+    function showMembership() {
+      document.getElementById('membership-section').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
